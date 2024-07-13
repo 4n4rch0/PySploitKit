@@ -1,4 +1,5 @@
 import scapy.all as scapy
+import socket
 
 def banner():
     pass
@@ -40,8 +41,9 @@ class Modules:
 
 class Commander:
 
-    def __init__(self):
-        pass
+    def __init__(self, command_instructionn):
+        self.command_instructionn = command_instructionn
+
 
 def main():
 
