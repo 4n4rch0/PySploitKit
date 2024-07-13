@@ -1,5 +1,7 @@
 import scapy.all as scapy
 import socket
+import time
+import sys
 
 def banner():
     pass
@@ -44,6 +46,25 @@ class Commander:
     def __init__(self, command_instructionn):
         self.command_instructionn = command_instructionn
 
+    def listen(self, receiver_ip, receiver_port):
+
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.bind((receiver_ip, receiver_port))
+        s.listen(1)
+        print("Listening on port " + str(receiver_port))
+        conn, receiver_ip = s.accept()
+        print('Connection received from ',receiver_ip)
+        while True:
+
+            ans = conn.recv(1024).decode()
+            sys.stdout.write(ans)
+            command = input()
+
+            command += "\n"
+            conn.send(command.encode())
+            time.sleep(1)
+
+            sys.stdout.write("\033[A" + ans.split("\n")[-1])
 
 def main():
 
