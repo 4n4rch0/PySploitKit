@@ -1,18 +1,29 @@
 import scapy.all as scapy
 
-def arp_scanner():
-    print("ARP TRANSFER TEST\n")
-    request = scapy.ARP()
-    
-    request.pdst = '192.168.1.0/24'
-    broadcast = scapy.Ether()
+def banner():
+    pass
 
-    broadcast.dst = 'ff:ff:ff:ff:ff:ff'
-  
-    request_broadcast = broadcast / request  
-    clients = scapy.srp(request_broadcast, timeout = 10,verbose = 1)[0]  
-    for element in clients:  
-        print(element[1].psrc + "      " + element[1].hwsrc)
+class Scanner:
+
+    def __init__(self) -> None:
+        pass
+
+    def arp_scan():
+        pass
+
+    def ping_scan():
+        pass
+
+class Exploit:
+
+    def __init__(self) -> None:
+        pass
+
+    def start_listener():
+        pass
+
+    def send_payload(payload):
+        pass
 
 def main():
 
