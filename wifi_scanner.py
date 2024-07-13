@@ -4,7 +4,7 @@ def arp_scanner():
     print("ARP TRANSFER TEST\n")
     request = scapy.ARP()
     
-    request.pdst = '192.168.0.1/24'
+    request.pdst = '192.168.1.0/24'
     broadcast = scapy.Ether()
 
     broadcast.dst = 'ff:ff:ff:ff:ff:ff'
