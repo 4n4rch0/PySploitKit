@@ -14,7 +14,7 @@ class Scanner:
     def get_network_devices(self):
         pass
 
-class Commander:
+class Modules:
 
     def __init__(self, listener_ip, listener_port):
         self.listener_ip = listener_ip
@@ -36,6 +36,11 @@ class Commander:
         pass
 
     def send_android_payload(self):
+        pass
+
+class Commander:
+
+    def __init__(self):
         pass
 
 def main():
