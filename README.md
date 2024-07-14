@@ -1,8 +1,6 @@
 # 💣 PySploitKit 🔥
 
-## A collection of simple tools and python scripts - having a big advantage in cybersecurity
-
-
+**Suite of useful and automated python tools, scripts and exploits**
 > 🔍 **Scanning features**
 
 > 🚀 **Delivery features**
