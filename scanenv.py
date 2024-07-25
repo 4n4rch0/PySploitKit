@@ -14,3 +14,6 @@ class RequestHost:
         ping_output, ping_errors = ping_process.communicate()
 
         print(ping_output.decode())
+
+    def directory_fuzz(self, fuzzing_list):
+        pass
