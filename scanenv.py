@@ -1,20 +1,33 @@
+from scapy import *
 import scapy.all as scapy
+import subprocess
+import sys, os
 
-class LocalNetwork:
+class RequestHost:
 
     def __init__(self):
         pass
 
-    def arp_scan(self, ip_network_data):
-        pass
+    def icmp_echo(self, ip_address):
 
-    def ping_scan(self, ip_network_data):
-        pass
+        ping_process = subprocess.Popen(['ping', '-c', '4', ip_address], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        ping_output, ping_errors = ping_process.communicate()
 
-class Internet:
+        print(ping_output.decode())
 
-    def __init__(self) -> None:
-        pass
+    def packet_callback(self, packet):
+        if IP in packet:
+            src_ip = packet[IP].src
+            dst_ip = packet[IP].dst
+            if src_ip not in active_hosts:
+                active_hosts.add(src_ip)
+            if dst_ip not in active_hosts:
+                active_hosts.add(dst_ip)
 
-    def port_scan():
-        pass
+        active_hosts = set()
+        
+        sniff(prn=packet_callback, store=0, timeout=30)
+
+        print("ACTIVE NETWORK DEVICES:")
+        for host in active_hosts:
+            print(host)
