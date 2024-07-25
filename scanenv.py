@@ -14,20 +14,3 @@ class RequestHost:
         ping_output, ping_errors = ping_process.communicate()
 
         print(ping_output.decode())
-
-    def packet_callback(self, packet):
-        if IP in packet:
-            src_ip = packet[IP].src
-            dst_ip = packet[IP].dst
-            if src_ip not in active_hosts:
-                active_hosts.add(src_ip)
-            if dst_ip not in active_hosts:
-                active_hosts.add(dst_ip)
-
-        active_hosts = set()
-        
-        sniff(prn=packet_callback, store=0, timeout=30)
-
-        print("ACTIVE NETWORK DEVICES:")
-        for host in active_hosts:
-            print(host)

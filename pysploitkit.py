@@ -26,8 +26,7 @@ def main():
 
         ip_address = "8.8.8.8"
 
-        # Discovery().icmp_request(ip_address)
-        Discovery().packet_callback()
+        Discovery().icmp_request(ip_address)
 
     except KeyboardInterrupt:
         sys.exit()
