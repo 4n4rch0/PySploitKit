@@ -14,17 +14,13 @@ class Discovery:
     def icmp_request(self, ip_address):
         scanenv.RequestHost().icmp_echo(ip_address)
 
-    def packet_callback(self):
-        scanenv.RequestHost().packet_callback()
-    
-
 def main():
 
     try:
 
         banner("PY$SPLOIT")
 
-        ip_address = "8.8.8.8"
+        ip_address = input("[?] Enter an IP address: ")
 
         Discovery().icmp_request(ip_address)
 
