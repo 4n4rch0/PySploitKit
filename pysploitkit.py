@@ -6,13 +6,18 @@ def banner(titel):
     f = Figlet(font='slant')
     print(f.renderText(titel))
 
-class Discovery:
+class DataRequest:
 
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
     def icmp_request(self, ip_address):
         scanenv.RequestHost().icmp_echo(ip_address)
+
+class Discovery:
+
+    def __init__(self):
+        pass
 
 def main():
 

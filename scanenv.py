@@ -1,8 +1,8 @@
-from scapy import *
-import scapy.all as scapy
 import subprocess
-import sys, os
+import sys
+import os
 
+# this class has its focus on scanning the environment for potential targets and creating protocol data with its findings.
 class RequestHost:
 
     def __init__(self):
