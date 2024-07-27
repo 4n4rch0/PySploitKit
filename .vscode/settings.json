@@ -1,0 +1,5 @@
+{
+    "notebook.defaultFormatter": "ClickCorp.clicknium",
+    "editor.defaultFormatter": "donjayamanne.python-environment-manager",
+    "editor.defaultFoldingRangeProvider": "ms-toolsai.jupyter"
+}
