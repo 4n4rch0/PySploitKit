@@ -1,4 +1,10 @@
 {
+<<<<<<< HEAD
     "editor.defaultFormatter": "donjayamanne.python-environment-manager",
     "notebook.defaultFormatter": "donjayamanne.python-environment-manager"
+=======
+    "notebook.defaultFormatter": "ClickCorp.clicknium",
+    "editor.defaultFormatter": "donjayamanne.python-environment-manager",
+    "editor.defaultFoldingRangeProvider": "ms-toolsai.jupyter"
+>>>>>>> a192c72896e330fb44149e144d5578b06e8685c8
 }

@@ -13,7 +13,8 @@ class RequestHost:
         ping_process = subprocess.Popen(['ping', '-c', '4', ip_address], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         ping_output, ping_errors = ping_process.communicate()
 
-        print(ping_output.decode())
+        print("[ICMP ECHO REPLY]", ping_output.decode())
+        print("[ICMP RESPONSE]", ping_errors.decode())
 
     def directory_fuzz(self, fuzzing_list):
         pass
