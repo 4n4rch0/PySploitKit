@@ -1,18 +1,24 @@
 import sys
-import scanenv
+import subprocess
 from pyfiglet import Figlet
 
 def banner(titel):
     f = Figlet(font='slant')
     print(f.renderText(titel))
 
-class DataRequest:
+class WebRequest:
 
     def __init__(self) -> None:
         pass
 
-    def icmp_request(self, ip_address):
-        scanenv.RequestHost().icmp_echo(ip_address)
+    def icmp_reply(self, ip_address):
+
+        ping_process = subprocess.Popen(['ping', '-c', '4', ip_address], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        ping_output, ping_errors = ping_process.communicate()
+
+        print("[ICMP ECHO REPLY]", ping_output.decode("utf-8"))
+        print("[ICMP RESPONSE]", ping_errors.decode("utf-8"))
+
 
 class Discovery:
 
@@ -25,9 +31,9 @@ def main():
 
         banner("PY$SPLOIT")
 
-        ip_address = input("[?] Enter an IP address: ")
+        dest_ip = "1.1.1.1"     # Cloudflare zwecks testen
 
-        Discovery().icmp_request(ip_address)
+        WebRequest().icmp_reply(dest_ip)
 
     except KeyboardInterrupt:
         sys.exit()
