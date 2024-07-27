@@ -39,7 +39,7 @@ def main():
         sys.exit()
 
     except Exception as e:
-        print(f"[-] Error occired - {e}")
+        print(f"[-] Error occured - {e}")
         sys.exit()
 
 if __name__ == '__main__':
