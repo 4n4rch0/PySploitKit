@@ -16,8 +16,8 @@ class WebRequest:
         ping_process = subprocess.Popen(['ping', '-c', '4', ip_address], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         ping_output, ping_errors = ping_process.communicate()
 
-        print("[ICMP ECHO REPLY]", ping_output.decode("utf-8"))
-        print("[ICMP RESPONSE]", ping_errors.decode("utf-8"))
+        print("[ICMP ECHO REPLY]", ping_output.decode('utf-8'))
+        print("[ICMP RESPONSE]", ping_errors.decode('utf-8'))
 
 
 class Discovery:
