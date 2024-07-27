@@ -1,0 +1,4 @@
+{
+    "editor.defaultFormatter": "donjayamanne.python-environment-manager",
+    "notebook.defaultFormatter": "donjayamanne.python-environment-manager"
+}
