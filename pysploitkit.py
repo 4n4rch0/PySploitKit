@@ -7,11 +7,10 @@ def banner(titel):
     f = Figlet(font='avatar')
     print(f.renderText(titel))
 
-class ExploitController:
+class AttackController:
 
-    def __init__(self) -> None:
-        pass
-
+    def __init__(self, user_action):
+        self.user_action = user_action
 
 def main():
 
@@ -19,6 +18,8 @@ def main():
 
         banner("PY$SPLOIT")
 
+        command = input("[1]\tICMP ECHO")
+        AttackController(command)
 
 
     except KeyboardInterrupt:
