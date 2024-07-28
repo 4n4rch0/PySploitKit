@@ -1,20 +1,15 @@
-import subprocess
-import sys
+import time
 import os
 
-# this class has its focus on scanning the environment for potential targets and creating protocol data with its findings.
 class RequestHost:
 
     def __init__(self):
         pass
 
-    def icmp_echo(self, ip_address):
-
-        ping_process = subprocess.Popen(['ping', '-c', '4', ip_address], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        ping_output, ping_errors = ping_process.communicate()
-
-        print("[ICMP ECHO REPLY]", ping_output.decode())
-        print("[ICMP RESPONSE]", ping_errors.decode())
-
-    def directory_fuzz(self, fuzzing_list):
+def icmp_echo(ip_destionation):
+    response = os.system("ping -c 4 " + ip_destionation)
+    if response == 0:
+        print("PING {}.".format(response))
+        time.sleep()
+    else:
         pass

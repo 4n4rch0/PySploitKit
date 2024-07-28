@@ -1,13 +1,17 @@
 import sys
-import subprocess
+import scanenv
 from pyfiglet import Figlet
 
+
 def banner(titel):
-    f = Figlet(font='slant')
+    f = Figlet(font='avatar')
     print(f.renderText(titel))
 
-class Coordination:
-    pass
+class ExploitController:
+
+    def __init__(self) -> None:
+        pass
+
 
 def main():
 
@@ -15,9 +19,7 @@ def main():
 
         banner("PY$SPLOIT")
 
-        dest_ip = "1.1.1.1"     # Cloudflare zwecks testen
 
-        WebRequest().icmp_reply(dest_ip)
 
     except KeyboardInterrupt:
         sys.exit()
