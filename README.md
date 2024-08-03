@@ -1,9 +1,11 @@
+![alt text](img/label.png)
+
 # 💣 PySploitKit 🔥
 
-**Suite of useful and automated python tools, scripts and exploits**
+## Suite of useful and automated python tools, scripts and exploits
 
-> 🔍 **Scanning features**
+ 🔍 **Scanning features**
 
-> 🚀 **Delivery features**
+ 🚀 **Delivery features**
 
-> 🚨 **Exploit features**
+ 🚨 **Exploit features**
