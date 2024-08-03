@@ -16,8 +16,11 @@ class Hostdiscovery:
     def ping_host(ip_address):
         scanenv.icmp_echo(ip_address)
 
-    def arp_scan(ip_address):
-        scanenv.arp_scan(ip_address)
+    def arp_scan(ip_address_range):
+        scanenv.arp_scan(ip_address_range)
+
+    def icmp_host_discover(ip_address_range):
+        scanenv.icmp_host_discover(ip_address_range)
 
 # contains any control option of the user and its mechanisms
 class AttackController:
@@ -30,8 +33,11 @@ class AttackController:
             ip_destionation = input("[*] DESTINATION IP ADDRESS: ")
             scanenv.icmp_echo(ip_destionation)
         if user_command == "2":
-            ip_address_range = input("[*] IP ADDRESS RANGE (f.e. 192.168.0.1/24): ")
+            ip_address_range = input("[*] IP ADDRESS RANGE (f.e. 192.168.1.0/24): ")
             scanenv.arp_scan(ip_address_range)
+        if user_command == "3":
+            ip_address_range = input("[*] IP ADDRESS RANGE (f.e. 192.168.1.0/24): ")
+            scanenv.icmp_host_discover(ip_address_range)
 
 
 def main():
@@ -41,7 +47,8 @@ def main():
         banner("PY$SPLOIT")
 
         print("[1]\tICMP ECHO REPLY (ping)")
-        print("[2]\tLOCAL ARP SCAN")
+        print("[2]\tSCAPY ARP SCAN")
+        print("[3]\tICMP HOST DISCOVER")
         print("[99]\tEXIT\n")
 
         user_command = input("[$]> ")

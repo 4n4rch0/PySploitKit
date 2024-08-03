@@ -1,7 +1,8 @@
 import time
 import os
-from scapy.all import ARP, Ether, srp
+from scapy.all import ARP, Ether, srp, IP, ICMP, sr1
 from prettytable import PrettyTable
+from ipaddress import IPv4Network
 
 def icmp_echo(ip_destionation):
     response = os.system("ping -c 4 " + ip_destionation)
@@ -10,8 +11,9 @@ def icmp_echo(ip_destionation):
     else:
         pass
 
-def arp_scan(ip_address):
-    arp = ARP(pdst=ip_address)
+def arp_scan(ip_address_range):
+
+    arp = ARP(pdst=ip_address_range)
     ether = Ether(dst="ff:ff:ff:ff:ff:ff")
     packet = ether/arp
     result = srp(packet, timeout=3, verbose=0)[0]
@@ -19,5 +21,23 @@ def arp_scan(ip_address):
     table = PrettyTable(["IP Address", "MAC Address"])
     for sent, received in result:
         table.add_row([received.psrc, received.hwsrc])
+
+    print(table)
+
+def icmp_host_discover(network_range):
+    
+    live_hosts = []
+
+    for ip in IPv4Network(network_range).hosts():
+
+        packet = IP(dst=str(ip))/ICMP()
+        response = sr1(packet, timeout=2, verbose=0)
+
+        if response:
+            live_hosts.append((response[IP].src, response[ICMP].type))
+
+    table = PrettyTable(["IP Address", "ICMP Type"])
+    for host in live_hosts:
+        table.add_row([host[0], host[1]])
 
     print(table)
