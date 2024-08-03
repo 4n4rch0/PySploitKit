@@ -22,10 +22,10 @@ class Hostdiscovery:
 # contains any control option of the user and its mechanisms
 class AttackController:
 
-    def __init__(self, user_command):
-        self.user_command = user_command
+    def __init__(self):
+        pass
 
-    def user_action(user_command):
+    def user_action(self, user_command):
         if user_command == "1":
             ip_destionation = input("[*] DESTINATION IP ADDRESS: ")
             scanenv.icmp_echo(ip_destionation)
@@ -42,7 +42,7 @@ def main():
 
         user_command = input("[$]> ")
 
-        AttackController(user_command).user_action()
+        AttackController().user_action(user_command)
 
 
     except KeyboardInterrupt:
