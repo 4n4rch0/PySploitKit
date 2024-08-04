@@ -28,6 +28,9 @@ class AttackController:
     def __init__(self):
         pass
 
+    def get_host_information(self):
+        pass
+
     def scanning_menu(self):
 
         os.system("clear")
