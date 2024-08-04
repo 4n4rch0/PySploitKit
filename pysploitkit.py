@@ -48,11 +48,10 @@ def main():
     try:
 
         banner("PY$SPLOIT")
-
-        print("[1]\tICMP ECHO REPLY (ping)")
-        print("[2]\tSCAPY ARP SCAN")
+        print("[1]\tICMP ECHO REPLY (ping host)")
+        print("[2]\tARP SCAN")
         print("[3]\tICMP HOST DISCOVER")
-        pritn("[4]\tNMAP HOST DISCOVER")
+        print("[4]\tNMAP HOST DISCOVER")
         print("[99]\tEXIT\n")
 
         user_command = input("[$]> ")

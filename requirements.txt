@@ -3,4 +3,4 @@ pyfiglet
 colorama
 scapy
 prettytable
-nmap
+python-nmap
