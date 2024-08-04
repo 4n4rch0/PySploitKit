@@ -28,7 +28,20 @@ class AttackController:
     def __init__(self):
         pass
 
-    def user_action(self, user_command):
+    def scanning_menu(self):
+
+        os.system("clear")
+
+        print("[1]\tICMP ECHO REPLY (ping host)")
+        print("[2]\tARP SCAN")
+        print("[3]\tICMP HOST DISCOVERY")
+        print("[4]\tNMAP HOST DISCOVERY")
+        print("[99]\tEXIT\n")
+
+        user_command = input("[$]> ")
+
+        os.system("clear")
+
         if user_command == "1":
             ip_destionation = input("[*] DESTINATION IP ADDRESS: ")
             scanenv.icmp_echo(ip_destionation)
@@ -42,21 +55,42 @@ class AttackController:
             ip_address_range = input("[*] IP ADDRESS RANGE (f.e. 192.168.1.0/24): ")
             scanenv.nmap_host_discover(ip_address_range)
 
+    def deivery_menu(self):
+        pass
+
+    def exploit_menu(self):
+        pass
+
+    def post_exploit_menu(self):
+        pass
+
+    def categories(self):
+
+        print("[1]\tSCANNING AND DISCOVERY")
+        print("[2]\tPAYLOAD DELIVERY")
+        print("[3]\tEXPLOITATION")
+        print("[4]\tPOST EXPLOITATION")
+        print("[99]\tEXIT\n")
+
+        input_section = input("[$]> ")
+
+        if input_section == "1":
+            AttackController().scanning_menu()
+        if input_section == "2":
+            AttackController().deivery_menu()
+        if input_section == "3":
+            AttackController().exploit_menu()
+        if input_section == "4":
+            AttackController().post_exploit_menu()
+
 
 def main():
 
     try:
 
         banner("PY$SPLOITK1T")
-        print("[1]\tICMP ECHO REPLY (ping host)")
-        print("[2]\tARP SCAN")
-        print("[3]\tICMP HOST DISCOVERY")
-        print("[4]\tNMAP HOST DISCOVERY")
-        print("[99]\tEXIT\n")
 
-        user_command = input("[$]> ")
-
-        AttackController().user_action(user_command)
+        AttackController().categories()
 
 
     except KeyboardInterrupt:
