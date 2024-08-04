@@ -105,12 +105,11 @@ class AttackController:
         if input_section == "1":
             AttackController().scanning_menu()
         if input_section == "2":
-            AttackController().deivery_menu()
+            pass
         if input_section == "3":
-            AttackController().exploit_menu()
+            pass
         if input_section == "4":
-            AttackController().post_exploit_menu()
-
+            pass
 
 def main():
 
@@ -119,7 +118,6 @@ def main():
         banner("PY$SPLOITK1T")
 
         AttackController().categories()
-
 
     except KeyboardInterrupt:
         sys.exit()
