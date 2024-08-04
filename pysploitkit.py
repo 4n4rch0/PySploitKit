@@ -38,6 +38,9 @@ class AttackController:
         if user_command == "3":
             ip_address_range = input("[*] IP ADDRESS RANGE (f.e. 192.168.1.0/24): ")
             scanenv.icmp_host_discover(ip_address_range)
+        if user_command == "4":
+            ip_address_range = input("[*] IP ADDRESS RANGE (f.e. 192.168.1.0/24): ")
+            scanenv.nmap_host_discover(ip_address_range)
 
 
 def main():
@@ -49,6 +52,7 @@ def main():
         print("[1]\tICMP ECHO REPLY (ping)")
         print("[2]\tSCAPY ARP SCAN")
         print("[3]\tICMP HOST DISCOVER")
+        pritn("[4]\tNMAP HOST DISCOVER")
         print("[99]\tEXIT\n")
 
         user_command = input("[$]> ")
