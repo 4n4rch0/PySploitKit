@@ -1,11 +1,19 @@
 import sys
 import os
-import scanenv
+import scanenv, localhostenv
 from pyfiglet import Figlet
 
 def banner(titel):
     f = Figlet(font='avatar')
     print(f.renderText(titel))
+
+class LocalHostData:
+
+    def __init__(self):
+        pass
+
+    def get_info_data(self):
+        localhostenv.gather_local_host_info()
 
 # contains any active recon scan option
 class Hostdiscovery:
@@ -28,8 +36,19 @@ class AttackController:
     def __init__(self):
         pass
 
-    def get_host_information(self):
-        pass
+    def local_host_menu(self):
+
+        os.system("clear")
+
+        print("[1]\tBASIC HOST INFORMATION")
+
+        user_command = input("[$]> ")
+
+        if user_command == "1":
+
+            os.system("clear")
+
+            LocalHostData().get_info_data()
 
     def scanning_menu(self):
 
@@ -82,7 +101,7 @@ class AttackController:
         input_section = input("[$]> ")
 
         if input_section == "0":
-            AttackController().get_host_information()
+            AttackController().local_host_menu()
         if input_section == "1":
             AttackController().scanning_menu()
         if input_section == "2":

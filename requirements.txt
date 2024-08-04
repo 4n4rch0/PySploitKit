@@ -4,3 +4,4 @@ colorama
 scapy
 prettytable
 python-nmap
+psutil
