@@ -70,9 +70,12 @@ class AttackController:
     def categories(self):
 
         print("[1]\tSCANNING AND DISCOVERY")
-        print("[2]\tPAYLOAD DELIVERY")
-        print("[3]\tEXPLOITATION")
-        print("[4]\tPOST EXPLOITATION")
+        print("[2]\tWEB APPLICATION TESTING")
+        print("[3]\tPASSWORD CRACKER")
+        print("[4]\tREVERSE SHELLS")
+        print("[5]\tCREATE A LISTENER")
+        print("[6]\tEXPLOITAT FACTORY")
+        print("[7]\tPOST EXPLOITATION")
         print("[99]\tEXIT\n")
 
         input_section = input("[$]> ")
