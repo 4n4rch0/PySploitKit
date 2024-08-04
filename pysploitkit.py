@@ -69,6 +69,7 @@ class AttackController:
 
     def categories(self):
 
+        print("[0]\tLOCAL HOST INFORMATION")
         print("[1]\tSCANNING AND DISCOVERY")
         print("[2]\tWEB APPLICATION TESTING")
         print("[3]\tPASSWORD CRACKER")
@@ -80,6 +81,8 @@ class AttackController:
 
         input_section = input("[$]> ")
 
+        if input_section == "0":
+            AttackController().get_host_information()
         if input_section == "1":
             AttackController().scanning_menu()
         if input_section == "2":
