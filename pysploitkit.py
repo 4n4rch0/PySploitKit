@@ -47,11 +47,11 @@ def main():
 
     try:
 
-        banner("PY$SPLOIT")
+        banner("PY$SPLOITK1T")
         print("[1]\tICMP ECHO REPLY (ping host)")
         print("[2]\tARP SCAN")
-        print("[3]\tICMP HOST DISCOVER")
-        print("[4]\tNMAP HOST DISCOVER")
+        print("[3]\tICMP HOST DISCOVERY")
+        print("[4]\tNMAP HOST DISCOVERY")
         print("[99]\tEXIT\n")
 
         user_command = input("[$]> ")
