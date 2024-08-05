@@ -17,4 +17,14 @@
 
  🚀 **Delivery features**
 
+ > - REVERSE SHELLS
+
+ > - EXPLOIT FACTORY
+
  🚨 **Exploit features**
+
+> - WEB APPLICATION TESTING
+
+> - PASSWORD CRACKER
+
+> - POST EXPLOITATION
