@@ -1,6 +1,6 @@
 import sys
 import os
-import scanenv, localhostenv
+from modules import scanenv, localhostenv
 from pyfiglet import Figlet
 
 def banner(titel):
