@@ -116,6 +116,10 @@ class AttackController:
             pass
         if input_section == "4":
             AttackController().revhell()
+            
+        if input_section == "99":
+            print("\n")
+            sys.exit()
 
 def main():
 
