@@ -1,50 +1,46 @@
 import os
+import sys
+import subprocess
 import nmap
-from scapy.all import ARP, Ether, srp, IP, ICMP, sr1
 from prettytable import PrettyTable
 from ipaddress import IPv4Network
 
 def icmp_echo(ip_destionation):
-    response = os.system("ping -c 4 " + ip_destionation)
+    response = os.popen("ping -c 4 " + ip_destionation).readlines()
     if response == 0:
-        print("PING {}.".format(response))
+        for output_line in response:
+            print(output_line[1])
     else:
+        print(f"[ERROR]\tNo ICMP ECHO reply by hopst {ip_destionation}.")
         pass
 
 def arp_scan(ip_address_range):
 
-    arp = ARP(pdst=ip_address_range)
-    ether = Ether(dst="ff:ff:ff:ff:ff:ff")
-    packet = ether/arp
-    result = srp(packet, timeout=3, verbose=0)[0]
+    try:
 
-    table = PrettyTable(["IP Address", "MAC Address"])
-    for sent, received in result:
-        table.add_row([received.psrc, received.hwsrc])
+        print("\n")
 
-    print(table)
+        response = os.popen(f"sudo arp-scan {ip_address_range}").readlines()
+        response.remove(response[0])
 
-def icmp_host_discover(network_range):
+        for output_line in response:
 
-    live_hosts = []
+            if output_line.replace("\n","") == "":
+                break
 
-    for ip in IPv4Network(network_range).hosts():
+            arp_host = output_line.replace("\n","")
+            print(f"[ARP SCAN]\t{arp_host}")
 
-        packet = IP(dst=str(ip))/ICMP()
-        response = sr1(packet, timeout=2, verbose=0)
+        print("\n")
+            
+    except Exception as e:
 
-        if response:
-            live_hosts.append((response[IP].src, response[ICMP].type))
-
-    table = PrettyTable(["IP Address", "ICMP Type"])
-    for host in live_hosts:
-        table.add_row([host[0], host[1]])
-
-    print(table)
+        print(f"[ERROR]\t{e}")
+        sys.exit()
 
 def nmap_host_discover(network_range):
     nm = nmap.PortScanner()
-    nm.scan(hosts=network_range, arguments='-sR -Pn -T3')
+    nm.scan(hosts=network_range, arguments='-sn')
 
     live_hosts = []
     for host in nm.all_hosts():
