@@ -44,7 +44,7 @@ def icmp_host_discover(network_range):
 
 def nmap_host_discover(network_range):
     nm = nmap.PortScanner()
-    nm.scan(hosts=network_range, arguments='-sn -A')
+    nm.scan(hosts=network_range, arguments='-sR -Pn')
 
     live_hosts = []
     for host in nm.all_hosts():
