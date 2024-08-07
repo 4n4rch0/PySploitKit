@@ -29,13 +29,11 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 +----------------+-------------+-------------+
 | ARP LIVE HOSTS | MAC ADDRESS | DEVICE DATA |
 +----------------+-------------+-------------+
-
 192.168.1.1     3c:37:12:f4:b3:c6	AVM
 192.168.1.3	    c0:25:06:89:a2:7f	AVM
-192.168.1.50	2c:f0:5d:e7:73:fb	Micro-Star
+192.168.1.50	   2c:f0:5d:e7:73:fb	Micro-Star
 192.168.1.4	    e8:a0:cd:48:4a:57	Nintendo
-192.168.1.61	98:cc:f3:9f:bf:be	(Unknown)
-
+192.168.1.61	   98:cc:f3:9f:bf:be	(Unknown)
 ```
 
 > **NMAP host discovery**
