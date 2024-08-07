@@ -5,9 +5,9 @@ from prettytable import PrettyTable
 
 def icmp_echo(ip_destionation):
     response = os.popen("ping -c 4 " + ip_destionation).readlines()
-    if response == 0:
-        for output_line in response:
-            print(output_line[1])
+    if response != "":
+        for x in range(0, len(response)-1):
+            print(response[x])
     else:
         print(f"[ERROR]\tNo ICMP ECHO reply by hopst {ip_destionation}.")
         pass
