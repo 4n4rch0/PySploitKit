@@ -1,9 +1,7 @@
 import os
 import sys
-import subprocess
 import nmap
 from prettytable import PrettyTable
-from ipaddress import IPv4Network
 
 def icmp_echo(ip_destionation):
     response = os.popen("ping -c 4 " + ip_destionation).readlines()
@@ -21,15 +19,17 @@ def arp_scan(ip_address_range):
         print("\n")
 
         response = os.popen(f"sudo arp-scan {ip_address_range}").readlines()
-        response.remove(response[0])
 
-        for output_line in response:
+        table = PrettyTable(["ARP LIVE HOSTS", "MAC ADDRESS", "DEVICE DATA"])
+        print(table)
 
-            if output_line.replace("\n","") == "":
+        for x in range(0, len(response)-1):
+            arp_live_host = str(response[1+x].split(" ")[0])
+            print(arp_live_host)
+            # table.add_row(arp_live_host)
+
+            if response[1+x].split(" ")[0].replace("\n","") == "":
                 break
-
-            arp_host = output_line.replace("\n","")
-            print(f"[ARP SCAN]\t{arp_host}")
 
         print("\n")
             
