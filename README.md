@@ -6,11 +6,25 @@
 
 🏠 **LOCAL HOST INFORMATION**
 
-> - System, Node, Release, CPU, Memory, Disk Usage
+**System, Node, Release, CPU, Memory, Disk Usage**
 
 🔍 **HOST DISCOVERY**
 
-> **ICMP host discovery**
+```
++-----------------+------------------+
+|    Attribute    |      Value       |
++-----------------+------------------+
+|      System     |      Linux       |
+|    Node Name    |  anarcho-Pad-P1  |
+|     Release     | 6.8.0-39-generic |
+|    Processor    |      x86_64      |
+|    CPU Count    |        6         |
+|   Memory (GB)   |      62.23       |
+| Disk Usage (GB) |      934.8       |
++-----------------+------------------+
+```
+
+**ICMP host discovery**
 
 ```
 [*] DESTINATION IP ADDRESS: 1.1.1.1
@@ -23,7 +37,7 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 
 ```
  
-> **ARP Scanning tool**
+**ARP Scanning tool**
 
 ```
 +----------------+-------------+-------------+
@@ -36,9 +50,14 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 192.168.1.61    98:cc:f3:9f:bf:be   (Unknown)
 ```
 
-> **NMAP host discovery**
+**NMAP host discovery**
 
-- Tryhacke.com test scan
+> ***Tryhacke.com*** test scan
+
+> Target ip address: **10.10.195.0/24**
+
+> <a> https://tryhackme.com/r/room/ice
+
 ```
 +---------------+--------+
 |   IP Address  | Status |
@@ -55,15 +74,15 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 
 🚀 **DELIVERY**
 
-> - REVERSE SHELL FACTORY
+> REVERSE SHELL FACTORY
 
-> - DELIVERY TOOL FACTORY
+> DELIVERY TOOL FACTORY
 
 💣 **EXPLOITATION & MORE**
 
-> - WEB APPLICATION TESTING
+> WEB APPLICATION TESTING
 
-> - PASSWORD CRACKER
+> PASSWORD CRACKER
 
 ## Disclaimer 🚫
 
