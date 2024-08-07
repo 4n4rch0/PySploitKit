@@ -8,7 +8,7 @@
 
 > - System, Node, Release, CPU, Memory, Disk Usage
 
-🔍 **Scanning features**
+🔍 **HOST DISCOVERY**
 
 > **ICMP host discovery**
 
@@ -53,13 +53,13 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 +---------------+--------+
 ```
 
-🚀 **Delivery features**
+🚀 **DELIVERY**
 
 > - REVERSE SHELL FACTORY
 
 > - DELIVERY TOOL FACTORY
 
-💣 **Exploit features**
+💣 **EXPLOITATION & MORE**
 
 > - WEB APPLICATION TESTING
 
