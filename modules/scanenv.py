@@ -6,8 +6,10 @@ from prettytable import PrettyTable
 def icmp_echo(ip_destionation):
     response = os.popen("ping -c 4 " + ip_destionation).readlines()
     if response != "":
+
         for x in range(0, len(response)-1):
-            print(response[x])
+            print(response[x].replace("\n", ""))
+
     else:
         print(f"[ERROR]\tNo ICMP ECHO reply by hopst {ip_destionation}.")
         pass
@@ -26,7 +28,6 @@ def arp_scan(ip_address_range):
         for x in range(0, len(response)-1):
             arp_live_host = str(response[1+x].split(" ")[0])
             print(arp_live_host)
-            # table.add_row(arp_live_host)
 
             if response[1+x].split(" ")[0].replace("\n","") == "":
                 break
@@ -39,6 +40,7 @@ def arp_scan(ip_address_range):
         sys.exit()
 
 def nmap_host_discover(network_range):
+    
     nm = nmap.PortScanner()
     nm.scan(hosts=network_range, arguments='-sn')
 

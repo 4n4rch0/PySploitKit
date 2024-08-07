@@ -10,9 +10,20 @@
 
 🔍 **Scanning features**
 
-> - ICMP host discovery
+> **ICMP host discovery**
+
+```
+[*] DESTINATION IP ADDRESS: 1.1.1.1
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+
+64 bytes from 1.1.1.1: icmp_seq=1 ttl=57 time=24.6 ms
+64 bytes from 1.1.1.1: icmp_seq=2 ttl=57 time=25.2 ms
+64 bytes from 1.1.1.1: icmp_seq=3 ttl=57 time=25.0 ms
+64 bytes from 1.1.1.1: icmp_seq=4 ttl=57 time=25.2 ms
+
+```
  
-> - ARP Scanning tool
+> **ARP Scanning tool**
 
 ```
 +----------------+-------------+-------------+
@@ -26,8 +37,10 @@
 192.168.1.61	98:cc:f3:9f:bf:be	(Unknown)
 
 ```
- 
-> - NMAP host discovery
+
+> **NMAP host discovery**
+
+
 
 🚀 **Delivery features**
 
