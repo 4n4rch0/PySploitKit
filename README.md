@@ -17,14 +17,12 @@
 
  🚀 **Delivery features**
 
- > - REVERSE SHELLS
+ > - REVERSE SHELL FACTORY
 
- > - EXPLOIT FACTORY
+ > - DELIVERY TOOL FACTORY
 
  🚨 **Exploit features**
 
 > - WEB APPLICATION TESTING
 
 > - PASSWORD CRACKER
-
-> - POST EXPLOITATION
