@@ -2,8 +2,6 @@
 
 ![alt text](img/4n4rch0-pysploitkit-banner.png)
 
-
-
 # Suite of useful and automated python tools, scripts and exploits
 
 🏠 **LOCAL HOST INFORMATION**
