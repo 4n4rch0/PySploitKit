@@ -6,23 +6,28 @@
 
 🏠 **LOCAL HOST INFORMATION**
 
- > - System, Node, Release, CPU, Memory, Disk Usage
+> - System, Node, Release, CPU, Memory, Disk Usage
 
 🔍 **Scanning features**
- > - ICMP host discovery
+
+> - ICMP host discovery
  
- > - ARP Scanning tool
+> - ARP Scanning tool
  
- > - NMAP host discovery
+> - NMAP host discovery
 
 🚀 **Delivery features**
 
- > - REVERSE SHELL FACTORY
+> - REVERSE SHELL FACTORY
 
- > - DELIVERY TOOL FACTORY
+> - DELIVERY TOOL FACTORY
 
 💣 **Exploit features**
 
 > - WEB APPLICATION TESTING
 
 > - PASSWORD CRACKER
+
+## Disclaimer 🚫
+
+PentestSetupTool is intended for educational and ethical hacking purposes only. By using this tool, you assume full responsibility for your actions. The creators and contributors of this repository are not liable for any malicious activities or consequences thereof.
