@@ -2,7 +2,7 @@
 
 ![alt text](img/4n4rch0-pysploitkit-banner.png)
 
-# Suite of useful and automated python tools, scripts and exploits
+# Python tools, scripts and exploits for hacking and pentetration tests
 
 🏠 **LOCAL HOST INFORMATION**
 
